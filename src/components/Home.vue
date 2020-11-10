@@ -18,6 +18,7 @@
         </div>
 
         <!-- 侧边栏菜单区 -->
+        <!-- router开启路由模式，以激活项的index值为地址 -->
         <el-menu background-color="#365A7D" text-color="#fff" active-text-color="#ffd04b" unique-opened :collapse="isCollapse" :collapse-transition="false" router :default-active="activePath">
           <!-- 一级菜单 -->
           <!--1,index需是动态的,不然展开收起时所有一级菜单都是一致的 2,index只接收字符串  -->
@@ -90,7 +91,6 @@ export default {
     async getMenueList(){
      const{data:res} =await this.$http('menus')
      if(res.meta.status!==200) return this.$message.error(res.meta.message)
-     console.log(res.data);
      this.menulist=res.data
     },
     // 切换菜单栏的显示与折叠
