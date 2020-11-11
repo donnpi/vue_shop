@@ -16,9 +16,9 @@
         <el-table-column prop="path" label="路径"> </el-table-column>
         <el-table-column prop="level" label="权限等级">
           <template v-slot="scope">
-            <el-tag v-if="scope.row.level == 0" type="info">一级</el-tag>
+            <el-tag v-if="scope.row.level == 0" type="success">一级</el-tag>
             <el-tag v-else-if="scope.row.level == 1" >二级</el-tag>
-            <el-tag v-else type="success">三级</el-tag>
+            <el-tag v-else type="info">三级</el-tag>
           </template>
         </el-table-column>
       </el-table>
