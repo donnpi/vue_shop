@@ -31,7 +31,7 @@
       </el-row>
 
       <!-- tab页签页 -->
-      <el-tabs v-model="activeName" @tab-click="handleTabClick">
+      <el-tabs v-model="activeName" @tab-click="handleTabClick" v-show="cateId">
         <el-tab-pane label="动态参数" name="many">
           <!-- 添加动态参数面板 -->
           <el-button
