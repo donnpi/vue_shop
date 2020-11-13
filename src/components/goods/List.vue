@@ -49,6 +49,7 @@
               size="mini"
               icon="el-icon-edit"
               type="primary"
+              @click="openEdit(scope.row)"
             ></el-button>
             <el-button
               round
@@ -89,6 +90,9 @@ export default {
       },
       total: 0,
       goodsList: [],
+      editForm:{
+        id:""
+      }
     }
   },
   methods: {
@@ -132,7 +136,9 @@ export default {
     // 路由导航跳转添加商品页面
     goAddPage(){
       this.$router.push('/goods/add')
-    }
+    },
+    // 打开编辑对话框
+
 
   },
 }
