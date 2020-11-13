@@ -364,7 +364,7 @@ export default {
         return arr.push(node.id)
       }
       node.children.forEach((item) => {
-        this.getLeafKeys(item, arr)
+        this.getDefKeys(item, arr)
       })
     },
     // 分配权限提交
