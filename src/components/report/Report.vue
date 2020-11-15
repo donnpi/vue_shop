@@ -64,9 +64,9 @@ export default {
     // 获取折线图数据
     const { data: res } = await this.$http('reports/type/1')
     if (res.meta.status !== 200) return this.$message('折线图数据获取失败')
-console.log(res.data);
+    console.log(res.data)
     //4，指定图表的配置项和数据
-  const result= Object.assign(this.options,res.data)
+    const result = Object.assign(this.options, res.data)
 
     //5，使用刚指定的配置项和数据显示图表。
     myChart.setOption(result)

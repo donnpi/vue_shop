@@ -1,17 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import './plugins/element.js'
 // 导入全局样式表
 import './assets/css/global.css'
 // 导入树形结构插件
 import TreeTable from 'vue-table-with-tree-grid'
 // 导入富文本编辑器
 import VueQuillEditor from 'vue-quill-editor'
-// 导入富文本编辑器样式
-import 'quill/dist/quill.core.css' // import styles
-import 'quill/dist/quill.snow.css' // for snow theme
-import 'quill/dist/quill.bubble.css' // for bubble theme
+
+// 导入进度条的js和css
+import NProgress from 'nprogress'
 
 //导入axios
 import axios from 'axios'
@@ -19,11 +17,21 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/';
 // 设置拦截器,config 请求对象
 axios.interceptors.request.use(config => {
+    // 在request拦截器中，展示进度条
+    NProgress.start()
+
     // config.headers请求头对象,手动加上Authorization属性发送给服务器
     config.headers.Authorization = window.sessionStorage.getItem('token');
     // 最后必须return config
     return config;
 });
+
+axios.interceptors.response.use(config => {
+    // 在request拦截器中，隐藏进度条
+    NProgress.done()
+    return config;
+})
+
 // 把axios挂载到vue原型上，那么每一个vue实例（组件）都可以通过this访问到axios
 Vue.prototype.$http = axios
 

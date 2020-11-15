@@ -6,29 +6,14 @@
         <img src="../assets/avatar.jpg" alt="avatar" />
       </div>
       <!-- 登录表单区域，，每一个表单域由一个 Form-Item 组件 -->
-      <el-form
-        label-width="0"
-        class="login_form"
-        :model="loginForm"
-        :rules="loginFormRules"
-        ref="loginFormRef"
-      >
+      <el-form label-width="0" class="login_form" :model="loginForm" :rules="loginFormRules" ref="loginFormRef">
         <!-- 用户名 -->
         <el-form-item prop="username">
-          <el-input
-            prefix-icon="el-icon-user-solid"
-            placeholder="请输入用户名"
-            v-model="loginForm.username"
-          ></el-input>
+          <el-input prefix-icon="el-icon-user-solid" placeholder="请输入用户名" v-model="loginForm.username"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
-          <el-input
-            prefix-icon="el-icon-lock"
-            placeholder="请输入密码"
-            v-model="loginForm.password"
-            show-password
-          ></el-input>
+          <el-input prefix-icon="el-icon-lock" placeholder="请输入密码" v-model="loginForm.password" show-password></el-input>
         </el-form-item>
         <!-- 按钮 -->
         <el-form-item class="btns">
@@ -90,8 +75,7 @@ export default {
         const { data: res } = await this.$http.post('/login', this.loginForm)
         console.log(res)
         // 服务器验证失败
-        if (res.meta.status !== 200)
-          return this.$message.error('密码或用户名错误，登录失败')
+        if (res.meta.status !== 200) return this.$message.error('密码或用户名错误，登录失败')
         // 服务器验证成功
         this.$message({
           message: '恭喜你，登录成功',
