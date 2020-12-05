@@ -1,19 +1,34 @@
-# vue_shop
+# 多人博客管理系统
 
-## Project setup
-```
-npm install
-```
+#### 介绍
+电商后台管理系统用于管理用户账号、商品分类、商品信息、订单、数据统计等业务功能。该项目采用前后端分离的开发模式，其中前端项目是基于 Vue 技术栈的 SPA 项目。  
++ 前端技术栈:  
+- Vue  
+- Vue-router  
+- Element-UI   
+- Axios  
+- Echarts  
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
++ 后端项目技术栈  
+- Node.js
+- Express
+- Jwt
+- Sequelize 
 
-### Compiles and minifies for production
-```
-npm run build
-```
+#### 网站架构
+- 登录/退出功能 
+- 主页布局  
+- 用户管理模块 
+- 权限管理模块 
+- 分离管理模块 
+- 参数管理模块 
+- 商品列表模块 
+- 订单管理模块 
+- 数据统计模块 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### 安装教程
+1.  npm install
+2.  vue ui 
+		
+#### 使用说明
+内有详细注释笔记可供参考
